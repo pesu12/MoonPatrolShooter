@@ -1,0 +1,105 @@
+GameActivity - Main Start file
+GameEngine - Have Access to all game objects with method run, onTouchEvent (input from user), startTread,stopThread, spawn player, spawn lasers.
+GameState - handles states paused, game over, player lost a life, score increased, etc. Also about when things must happen.
+GameStarter - interface between GameEngine and GameState where GameState tell GameEngine what to do but in a very restricted way 
+SoundEngine - File For Sounds
+----------------------------------> Make a test-run
+HUD - displays all the on-screen information to the player , like player-controls (Up, Down, Flip, Shoot, Pause + draw
+Renderer - will oversee controlling the drawing for all objects. Method draw.
+----------------------------------> Make a test-run That displays Press Play and the Player buttons.
+The Observer pattern
+What we need is a way for the GameEngine class to send touch data to the UIController
+The GameEngine class will need a method that the observer classes can call to register/subscribe for updates.
+
+GameEngineBroadcaster - interface for Observer pattern
+InputObserver - interface for Observer pattern
+UIController - Does player click on button.
+----------------------------------> Make a test-run to verify that start/pause/resume button to start the game.
+Particle - create explosion effect.
+ParticleSysytem - controls the explosion
+---------------------------------> Make test run
+PhysicsEngine - update method and detectCollisions
+---------------------------------> Make test run
+ObjectSpec - base/parent for all of the specification classes.
+AlienChaseSpec - the alien which chases after the player and fires lasers at him once it is in line or nearly in line.
+AlienDiverSpec -  specifes the Diver alien that will continually swoop at the player in an attempt to destroy him
+AlienLaserSpec - the projectile fired by some of the aliens
+AlienPatrolSpec - specification for the Patroller alien
+BackgroundSpec - specification for the background
+PlayerLaserSpec - specified the player's lasers
+PlayerSpec - player-specific movement and spawn components
+GraphicsComponent - interface with "initialize" and "draw"
+MovementComponent -interface for all movement related component classes
+SpawnComponent - interface for spawn wich decides where to spawn
+StdGraphicsComponent - class with "initialize" and "draw"
+PlayerMovementComponent - class that implements interface MovementComponent
+PlayerSpawnComponent - class that implements SpawnComponent
+PlayerInputComponent - class for
+PlayerLaserSpawner - interface for method spawnPlayerLaser
+LaserMovementComponent - class which implements MovementComponent interface
+LaserSpawnComponent - class which implements interface SpawnComponent
+BackgroundGraphicsComponent - class that implements GraphicsComponent
+BackgroundMovementComponent -class that implements MovementComponent interface
+BackgroundSpawnComponent - class  that implements SpawnComponent interface
+
+Transform - class that holds all data and perform all operations that are common to all GameObject instances + more
+GameObject - class that are a combination of our various components.
+GameObjectFactory - class that use "ObjectSpec" based classes to assemble "GameObject" instances with the correct components.
+
+Level - class is a place to design the level. If you want more enemies of a certain type or less lasers..
+---------------------------------> Make test run
+
+AlienChaseMovementComponent -Class with random shooting for chasing alien 
+AlienLaserSpawner - interface for getting rid of the errors in the move method 
+AlienDiverMovementComponent - class for alien divings
+AlienHorizontalSpawnComponent - class for spawn(start to be displayed) offscreen on left or right side.
+AlienPatrolMovementComponent - class to move alien patrols 
+AlienVerticalSpawnComponent -class to randomly spawn a diving alien off-screen
+---------------------------------> Make test run
+
+1. Plan game in detail
+- A car that moves on a horizontal way 
+- When there is an obstacle the car needs to shoot it away
+- When there is a hole the car need to jamp
+- From the left higher areare aliens can come and shoot you, you can also shoot the alien.
+- On the screen 
+- How long should the play go on, how do you create the background
+- Button to start and pause game
+- Button to jump
+- Button to shoot forward
+- Button to shoot upwards
+
+-if player collides the game is paused?
+
+2. Make sketeches
+3. How will you create each game object( Behaviour, states, how to structure code)
+Game Objects:
+ -Moon car, shooting forward, shooting upwards, jumping.
+ -Alien that goes from left to right and do random shooting
+ -Moon car laser
+ -Alien laser
+ -Ground obstacle
+ -Ground hole   
+
+Version:
+1. Make a car that goes forward until 3 lives are ended.
+2. Make a car that goes forward and shoots forward
+3. Make a car that goes forward, shoots forward and jumps
+4. Make an alien that goes forward
+5. Make and alien that shoot downwards..
+
+
+------------------------------------------
+How to modify existing game (Scrolling Shooter)
+1. Change back-ground , Worked fine.
+2. Remove height up button
+3. Keep shoot forward button 
+4. Keep start -pause button
+5. Keep aliens
+6. Set Moon car on a good x-level
+7. Change "direction button" to shoot upwards
+8. Change height down button to jump
+9. Add pile obstacle coming from right randomly
+10. When shooting at obstacle it should disappear
+10. Add holes in the groud coming from right that goes up over car, check for collisions.
+
