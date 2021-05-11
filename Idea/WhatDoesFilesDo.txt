@@ -93,13 +93,15 @@ Version:
 How to modify existing game (Scrolling Shooter)
 1. Change back-ground , Worked fine.
 2. Remove height up button
-3. Keep shoot forward button 
-4. Keep start -pause button
-5. Keep aliens
-6. Set Moon car on a good x-level
+3. Keep shoot forward button, done
+4. Keep start -pause button, done
+5. Keep aliens, done
+6. Set Moon car on a good x-level, Done
 7. Change "direction button" to shoot upwards
 8. Change height down button to jump
 9. Add pile obstacle coming from right randomly
 10. When shooting at obstacle it should disappear
 10. Add holes in the groud coming from right that goes up over car, check for collisions.
 
+com.example.android.moonpatrolshooter
+com.example.android.scrollingshooter
