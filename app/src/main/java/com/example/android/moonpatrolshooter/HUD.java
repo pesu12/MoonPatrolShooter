@@ -15,11 +15,12 @@ class HUD {
 
     private ArrayList<Rect> controls;
 
+    //*Change so that Down is index 0 to remove the up-button*//
     static int UP = 0;
-    static int DOWN = 1;
-    static int FLIP = 2;
-    static int SHOOT = 3;
-    static int PAUSE = 4;
+    static int DOWN = 0;
+    static int FLIP = 1;
+    static int SHOOT = 2;
+    static int PAUSE = 3;
 
     HUD(Point size){
         mScreenHeight = size.y;
@@ -72,7 +73,7 @@ class HUD {
                 buttonPadding + buttonHeight);
 
         controls = new ArrayList<>();
-        controls.add(UP,up);
+        //controls.add(UP,up);
         controls.add(DOWN,down);
         controls.add(FLIP, flip);
         controls.add(SHOOT, shoot);
